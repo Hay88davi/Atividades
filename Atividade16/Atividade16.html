@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressões Regulares</title>
+</head>
+<style>
+    .certo
+    {
+        background-color:  lightgreen;
+    }
+    .errado
+    {
+        background-color: lightcoral;
+    }
+</style>
+<body>
+    Digite o seu Telefone: <input type="text" id="telefone">
+    <button onclick="Validartelefone();">OK</button>
+    
+    <br> <br>
+
+    Digite o seu CPF:      <input type="text" id="CPF">
+    <button onclick="Validarcpf();">OK</button>
+
+    <br> <br>
+    
+    Digite o seu CEP:      <input type="text" id="CEP">
+    <button onclick="Validarcep();">OK</button>
+</body>
+    <script>
+        function Validartelefone()
+        {
+            expresao = /^\([0-9]{2}\) [0-9]{1} [0-9]{4}-[0-9]{4}$/g;
+            texto = telefone.value
+            resposta = expresao.test(texto);
+            if(resposta == false)
+            {
+                telefone.classList.add('errado')
+                telefone.classList.remove('certo')
+                alert("Telefone Incorreto")
+            }
+            else(resposta == true)
+            {
+                telefone.classList.add('certo')
+                telefone.classList.remove('errado')
+            }
+        }
+        function Validarcep()
+        {
+            expresao = /^[0-9]{5}-[0-9]{3}$/g;
+            texto = CEP.value
+            resposta = expresao.test(texto);
+            if(resposta == false)
+            {
+                CEP.classList.add('errado')
+                CEP.classList.remove('certo')
+                alert("CEP Incorreto")
+            }
+            else(resposta == true)
+            {
+                CEP.classList.add('certo')
+                CEP.classList.remove('errado')
+            }
+        }
+        function Validarcpf()
+        {
+            expresao = /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/g;
+            texto = CPF.value
+            resposta = expresao.test(texto) ;
+            if(resposta == false)
+            {
+                CPF.classList.add('errado')
+                CPF.classList.remove('certo')
+                alert("CPF Incorreto")
+            }
+            else(resposta == true)
+            {
+                CPF.classList.add('certo')
+                CPF.classList.remove('errado')
+            }
+        }
+    </script>
+</html>

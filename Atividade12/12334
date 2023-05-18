@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão</title>
+    <style>
+        body
+        {
+            width: 100%;
+            height: 100vh;
+            margin: 0px; /* TIRAR A BORDA*/
+            /* abaixo -> centraliza tudo na tela */
+            display: flex;
+            align-content: center;
+            align-items:center;
+            justify-content: center;
+            justify-items: center; 
+        }
+        .D1
+        {
+            width: 80%;
+            height: 100vh; /* VISUAL HEIGHT = ALTURA VISUAL   */
+            background-color: pink; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .botoes:hover
+        {
+            background-color: rgb(150, 12, 150);
+            width: 310px;
+            cursor: pointer;
+        }
+        .botoes
+        {
+            width: 300px;
+            height: 50px;
+            background-color: purple;
+            color: rgb(255, 255, 255);
+            display: flex;
+            align-content: center;
+            align-items:center;
+            justify-content: center;
+            justify-items: center; 
+            border-radius: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="D1">
+        
+        <a href="https://animeadventures.fandom.com/wiki/Tier_Lists" target="_blank"> 
+            <div class="botoes">Janela nova</div>    
+        </a>
+
+        <a href="https://animeadventures.fandom.com/wiki/Tier_Lists" target="_self">
+        <div class="botoes">Mesma aba</div>
+        </a>
+        
+        <a href="https://animeadventures.fandom.com/wiki/Tier_Lists" target="_top"> 
+        <div class="botoes">nova aba</div>
+        </a>
+        
+    </div>
+    
+</body>
+</html>

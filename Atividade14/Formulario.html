@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Picolé</title>
+</head>
+<style>
+    
+    .texto
+    {
+        width: 40%;
+        height: 200px;
+    }
+    button
+    {
+        color: yellow;
+        width: 100px;
+        height: 50px;
+        font-size: 150%;
+        background-color: royalblue;
+    }
+    button:hover
+    {
+        background-color: yellow;
+        color: royalblue;
+        cursor: pointer;
+    }
+</style>
+<body>
+
+    <fieldset>
+        <legend> Dados Pessoais</legend>
+
+        Nome:
+        <input type="text" class="caixa" id="Nome">
+        <br> <br>
+        Endereço:
+        <input type="text" class="caixa" id="Endereço">
+        <br> <br>
+        Cidade:
+        <input type="text" class="caixa" id="Cidade">
+        <br> <br>
+        <select id="Estado">
+            <option>Amapá</option>
+            <option>Bahia</option>
+            <option>Paraná</option>
+            <option selected>São Paulo</option>
+        </select>
+    
+    </fieldset>
+        <br> <br>
+    <fieldset>
+
+        <legend> Dados Profissionais</legend>
+
+        Natureza do Cargo
+        <br> <br>
+        <input type="radio"  id="Gerencia" name="cargos">
+        Gerencia
+        <input type="radio"  id="Financeiro" name="cargos">
+        Financeiro
+        <input type="radio"  id="Recepção" name="cargos">
+        Recepção
+        <input type="radio"  id="Administrativo"  name="cargos">
+        Administrativo
+        <input type="radio"  id="Juridico"  name="cargos">
+        Juridico
+        <br> <br>
+        Área de Interesse
+        <br>
+        <input type="checkbox" id="Computação">Computação
+        <input type="checkbox" id="Biologia">Biologia
+        <input type="checkbox" id="Meio_Ambiente">Meio Ambiente 
+        <input type="checkbox" id="Engenharia">Engenharia     
+        <br> <br>
+
+        Mini-Curriculo:
+        <br> <br>
+         <textarea class="texto" id="curriculo"></textarea>
+    
+    </fieldset>
+    <br> <br>
+    
+    <div class="Botoes">
+        <button>Enviar</button>
+        <button>Limpar</button>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,20 @@
+.janelaa
+{
+    width: 300px;
+    height: 200px;
+    border: solid 1px;
+    border-color: black ;
+    position: absolute;
+    left: 42.5%;
+    top: 40vh;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+@media print {
+    .bt
+    {
+        display: none;
+    }
+    
+}
