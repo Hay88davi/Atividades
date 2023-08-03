@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+</head>
+<body>
+
+    <form action="" method="post" id="form1">
+        DIGITE A MATRÍCULA: <input type="text" name="matricula">
+        <br>  <br>
+        DIGITE O NOME: <input type="text" name="nome">
+        <br>   <br>
+        
+        <button type="button" onclick="Listar()">
+           Inserir
+        </button>
+
+    </form>
+
+    <br> <br>
+
+    <table align="center" width="400px" border="1" id="tabela1">
+        <tr>
+            <td> MATRÍCULA </td>  <td> NOME </td>
+        </tr>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script type="text/javascript">
+        function Listar() {
+            var dados = $('#form1').serialize();
+
+            $.ajax({
+                type: "POST",
+                url: "arquivo.php",
+                data: dados,
+                dataType: 'json',
+                
+                success: function(meu_json) {
+                    console.log(meu_json); // Output the JSON data received from arquivo.php
+                    // Atualiza a tabela com os dados recebidos do PHP
+                    if (meu_json && meu_json.matricula && meu_json.nome) {
+                        const tabela = document.getElementById("tabela1");
+                        const newRow = tabela.insertRow();
+                        newRow.insertCell().innerText = meu_json.matricula;
+                        newRow.insertCell().innerText = meu_json.nome;
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Ocorreu um erro ao enviar os dados: ' + error);
+                },
+                timeout: 5000
+            });
+        }
+    </script>
+
+</body>
+</html>
